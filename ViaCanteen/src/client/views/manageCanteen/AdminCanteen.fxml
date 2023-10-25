@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="476.0" prefWidth="670.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="client.views.manageCanteen.AdminCanteenController">
+    <children>
+        <TabPane layoutX="-2.0" layoutY="-2.0" prefHeight="476.0" prefWidth="670.0" tabClosingPolicy="UNAVAILABLE">
+            <tabs>
+                <Tab text="Admin">
+                    <content>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" style="-fx-background-color: #f2ebd3;">
+                            <children>
+                                <TableView fx:id="reservationTableView" layoutX="8.0" layoutY="62.0" prefHeight="246.0" prefWidth="500.0">
+                                    <columns>
+                                        <TableColumn fx:id="phone" text="PhoneNo" />
+                                        <TableColumn fx:id="menuName" prefWidth="97.0" text="MenuName" />
+                                        <TableColumn fx:id="menuPrice" prefWidth="63.0" text="Price" />
+                                        <TableColumn fx:id="menuQuantity" prefWidth="72.0" text="Quantity" />
+                                        <TableColumn fx:id="IsMenuPickedUp" prefWidth="95.0" text="IsFoodPickedUp" />
+                              <TableColumn fx:id="menuType" prefWidth="89.0" text="MenyType" />
+                                    </columns>
+                                </TableView>
+                                <Label layoutX="8.0" layoutY="35.0" text="Current Reservation :" textAlignment="CENTER">
+                                    <font>
+                                        <Font name="Elephant" size="15.0" />
+                                    </font>
+                                </Label>
+                                <Button layoutX="80.0" layoutY="375.0" mnemonicParsing="false" text="Confirm Pickup" />
+                                <Button layoutX="346.0" layoutY="375.0" mnemonicParsing="false" text="Delete" />
+                                <CheckBox layoutX="53.0" layoutY="315.0" mnemonicParsing="false" text="Waiting-For PickUp" />
+                                <Button layoutX="519.0" layoutY="375.0" mnemonicParsing="false" text="Check-out" />
+                        <TextField layoutX="536.0" layoutY="199.0" prefHeight="26.0" prefWidth="122.0" promptText="Phone number" />
+                        <Button layoutX="571.0" layoutY="241.0" mnemonicParsing="false" text="Search" />
+                        <Label fx:id="errorField" layoutX="167.0" layoutY="410.0" prefHeight="27.0" prefWidth="179.0" />
+                            </children>
+                        </AnchorPane>
+                    </content>
+                </Tab>
+                <Tab text="NotInUse">
+                    <content>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" style="-fx-background-color: #f2ebd3;">
+                            <children>
+                                <Button layoutX="190.0" layoutY="41.0" mnemonicParsing="false" prefHeight="94.0" prefWidth="213.0" text="Export Menu" />
+                                <Button layoutX="184.0" layoutY="157.0" mnemonicParsing="false" prefHeight="94.0" prefWidth="213.0" text="Export Reservations" />
+                                <Button layoutX="184.0" layoutY="274.0" mnemonicParsing="false" prefHeight="94.0" prefWidth="213.0" text="Export both" />
+                            </children>
+                        </AnchorPane>
+                    </content>
+                </Tab>
+                <Tab text="AdminMenu">
+                    <content>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" style="-fx-background-color: #f2ebd3;">
+                            <children>
+                                <TableView fx:id="menuTableViewAdmin" layoutX="-1.0" layoutY="51.0" prefHeight="291.0" prefWidth="655.0">
+                                    <columns>
+                                        <TableColumn fx:id="idMenuAdmin" prefWidth="69.0" text="MenuNo" />
+                                        <TableColumn fx:id="menuNameAdmin" prefWidth="76.0" text="MenuName" />
+                              <TableColumn fx:id="IsMenuVegAdmin" prefWidth="313.0" text="Ingredient" />
+                              <TableColumn fx:id="menuIngredientAdmin" prefWidth="75.0" text="IsMenuVeg" />
+                              <TableColumn fx:id="menuTypeAdmin" minWidth="-1.0" prefWidth="83.0" text="menuType" />
+                                        <TableColumn fx:id="menuPriceAdmin" prefWidth="38.0" text="Price " />
+                                    </columns>
+                                </TableView>
+                                <Label layoutX="14.0" layoutY="23.0" text="Available Today  Menus  :" textAlignment="CENTER">
+                                    <font>
+                                        <Font name="Elephant" size="15.0" />
+                                    </font>
+                                </Label>
+                                <Button layoutX="26.0" layoutY="392.0" mnemonicParsing="false" onAction="#onDeleteMenu" prefHeight="25.0" prefWidth="117.0" text="Delete Menu" />
+                                <Button layoutX="504.0" layoutY="392.0" mnemonicParsing="false" onAction="#upDateMenuList" prefHeight="25.0" prefWidth="113.0" text="Update" />
+                        <Button layoutX="275.0" layoutY="392.0" mnemonicParsing="false" onAction="#onAddMenu" prefHeight="25.0" prefWidth="114.0" text="AddMenu" />
+                            </children>
+                        </AnchorPane>
+                    </content>
+                </Tab>
+            </tabs>
+        </TabPane>
+    </children>
+</AnchorPane>
